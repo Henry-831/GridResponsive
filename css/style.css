@@ -4,7 +4,6 @@ body {
 }
 
 [class*=box],
-div,
 .header,
 .content1,
 .sidebar,
@@ -12,7 +11,7 @@ div,
 .footer2,
 .footer3,
 .footer4 {
-    border: 1px solid #333
+    border: 1px solid #333;
 }
 
 [class*="container"] {
@@ -21,8 +20,8 @@ div,
     height: 600px;
     display: grid;
 
-    grid-template-columns: 40px 50px auto 50px 40px;
-    grid-template-rows: 25% 100px auto;
+    grid-template-columns: 15.5% auto 15.5%;
+    grid-template-rows: repeat(1, minmax(200px, 1fr));
 }
 
 
@@ -47,6 +46,24 @@ div,
     grid-area: box1
 }
 
+.box2 {
+    grid-area: box2;
+}
+.box3 {
+    grid-area: box3;
+}
+
+.footer2 {
+    grid-area: footer2;
+}
+
+.footer3 {
+    grid-area: footer3;
+}
+
+.footer4 {
+    grid-area: footer4;
+}
 
 .container2 {
     grid-template-columns: repeat(4, 1fr);
@@ -55,9 +72,30 @@ div,
         "header header header header"
         "box1 box2 box2 box3"
         "content1 content1 content1 sidebar"
+       ;
+
+    /*grid-column-gap: 10px;
+    grid-row-gap: 10px;*/
+    grid-gap: 1% 1%;
+}
+
+.footcont {
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    border: 1px solid #333;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, minmax(200px, 1fr));
+    grid-template-areas:
+        
         "footer footer2 footer3 footer4";
 
     /*grid-column-gap: 10px;
     grid-row-gap: 10px;*/
-    grid-gap: 5px 20px;
+    grid-gap: 1% 1%;
+}
+
+
+[class*="footer"] {
+   margin: 10px 10px;
 }
